@@ -2,14 +2,14 @@
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('preloader').classList.add('hide');
-  }, 1800);
+  }, 2200);
 });
 
 // Попап
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('popup').classList.add('show');
-  }, 4000);
+  }, 4500);
 });
 
 document.getElementById('popup-close').addEventListener('click', () => {
@@ -33,23 +33,49 @@ function updateClock() {
   const options = { day: 'numeric', month: 'long', weekday: 'long' };
   document.getElementById('clock-date').textContent = now.toLocaleDateString('ru-RU', options);
 }
-
 updateClock();
 setInterval(updateClock, 1000);
+
+// Активный пункт меню при скролле
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.nav-item');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop - 260) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navItems.forEach(item => {
+    item.classList.remove('active');
+    if (item.getAttribute('href') === `#${current}`) {
+      item.classList.add('active');
+    }
+  });
+});
+
+// Лёгкий параллакс героя
+const heroBg = document.querySelector('.hero-bg');
+window.addEventListener('scroll', () => {
+  const scrolled = window.pageYOffset;
+  if (scrolled < window.innerHeight) {
+    heroBg.style.transform = `translateY(${scrolled * 0.35}px)`;
+  }
+});
 
 // Появление секций
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      entry.target.classList.add('visible');
     }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.12 });
 
 document.querySelectorAll('.section-inner, .two-cols, .contact-inner').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(40px)';
-  el.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
+  el.classList.add('fade-up');
   observer.observe(el);
 });
