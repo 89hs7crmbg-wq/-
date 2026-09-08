@@ -7,151 +7,139 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- Прелоадер -->
   <div id="preloader">
-    <div class="preloader-inner">
-      <img src="IMG_8735.jpeg" alt="AK" class="preloader-logo">
-      <div class="preloader-text">Тихий ход</div>
-    </div>
+    <img src="IMG_8735.png" alt="AK" class="preloader-logo">
   </div>
 
   <!-- Попап -->
   <div id="popup" class="popup">
     <div class="popup-content">
-      <p class="popup-text">Это выдуманный сайт.<br>Все совпадения случайны.</p>
-      <p class="popup-question">Хотите заказать сайт?</p>
+      <p>Это выдуманный сайт.<br>Все совпадения случайны.</p>
+      <p class="popup-q">Хотите заказать сайт?</p>
       <a href="https://vk.ru/id_aikharisov" target="_blank" class="popup-btn">Написать в ВК</a>
-      <button id="popup-close" class="popup-close">Закрыть</button>
+      <button id="popup-close">Закрыть</button>
     </div>
   </div>
 
-  <!-- Вертикальное меню справа -->
-  <nav class="side-nav">
-    <a href="#hero" class="nav-item active" data-label="Главная"><span></span></a>
-    <a href="#atelier" class="nav-item" data-label="Ателье"><span></span></a>
-    <a href="#collections" class="nav-item" data-label="Создание"><span></span></a>
-    <a href="#craft" class="nav-item" data-label="Мастерство"><span></span></a>
-    <a href="#journal" class="nav-item" data-label="Журнал"><span></span></a>
-    <a href="#contact" class="nav-item" data-label="Контакты"><span></span></a>
-  </nav>
-
-  <!-- Маленький логотип слева сверху -->
+  <!-- Фиксированный логотип -->
   <div class="fixed-logo">
-    <img src="IMG_8735.jpeg" alt="AK">
+    <img src="IMG_8735.png" alt="AK">
   </div>
 
-  <!-- Hero -->
-  <section id="hero" class="hero">
-    <div class="hero-bg" style="background-image: url('IMG_8908.jpeg')"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-label">Ателье механических часов</p>
-      <h1 class="hero-title">Тихий<br>ход</h1>
-      <p class="hero-city">Сургут</p>
+  <!-- Главный экран-механизм -->
+  <main class="mechanism">
 
-      <div class="soft-clock">
-        <div class="clock-time" id="clock-time">00:00:00</div>
-        <div class="clock-label">мягкое время</div>
-        <div class="clock-date" id="clock-date"></div>
+    <!-- Фон -->
+    <div class="mech-bg" style="background-image: url('IMG_8908.jpeg')"></div>
+    <div class="mech-overlay"></div>
+
+    <!-- Центральные часы -->
+    <div class="clock-core">
+      <div class="clock-ring"></div>
+      <div class="clock-face">
+        <div class="time" id="clock-time">00:00</div>
+        <div class="label">мягкое время</div>
+        <div class="date" id="clock-date"></div>
       </div>
     </div>
 
-    <div class="scroll-hint">листайте вниз</div>
-  </section>
+    <!-- Шестерёнки меню (по кругу) -->
+    <div class="gears">
+      <button class="gear" data-layer="atelier" style="--i:0">
+        <img src="IMG_8918.jpeg" alt="">
+        <span>Ателье</span>
+      </button>
+      <button class="gear" data-layer="create" style="--i:1">
+        <img src="IMG_8918.jpeg" alt="">
+        <span>Создание</span>
+      </button>
+      <button class="gear" data-layer="craft" style="--i:2">
+        <img src="IMG_8918.jpeg" alt="">
+        <span>Мастерство</span>
+      </button>
+      <button class="gear" data-layer="journal" style="--i:3">
+        <img src="IMG_8918.jpeg" alt="">
+        <span>Журнал</span>
+      </button>
+      <button class="gear" data-layer="contact" style="--i:4">
+        <img src="IMG_8918.jpeg" alt="">
+        <span>Контакты</span>
+      </button>
+    </div>
 
-  <!-- Ателье -->
-  <section id="atelier" class="section">
-    <div class="section-inner">
-      <div class="section-text">
-        <span class="section-number">01</span>
-        <h2>Ателье</h2>
-        <p>Мы создаём механические часы вручную. Каждая деталь проходит через руки мастера. Никакой спешки — только точность и тишина.</p>
-        <p class="section-note">Сургут · Независимое ателье</p>
-      </div>
-      <div class="section-image">
-        <img src="IMG_8910.jpeg" alt="Рабочий стол">
+    <!-- Название -->
+    <div class="mech-title">
+      <h1>Тихий ход</h1>
+      <p>Сургут</p>
+    </div>
+
+  </main>
+
+  <!-- Слои контента (появляются поверх) -->
+  <div class="layers">
+
+    <div class="layer" id="layer-atelier">
+      <button class="layer-close">×</button>
+      <div class="layer-content">
+        <img src="IMG_8910.jpeg" alt="">
+        <div class="layer-text">
+          <h2>Ателье</h2>
+          <p>Мы создаём механические часы вручную. Каждая деталь проходит через руки мастера. Никакой спешки — только точность и тишина.</p>
+          <p class="note">Сургут · Независимое ателье</p>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Создание -->
-  <section id="collections" class="section section-dark">
-    <div class="section-inner reverse">
-      <div class="section-image">
-        <img src="IMG_8912.jpeg" alt="Детали">
-      </div>
-      <div class="section-text">
-        <span class="section-number">02</span>
-        <h2>Создание</h2>
-        <p>Каждый механизм собирается с нуля. Мы не копируем — мы слушаем, как должен тикать именно этот экземпляр.</p>
+    <div class="layer" id="layer-create">
+      <button class="layer-close">×</button>
+      <div class="layer-content">
+        <img src="IMG_8912.jpeg" alt="">
+        <div class="layer-text">
+          <h2>Создание</h2>
+          <p>Каждый механизм собирается с нуля. Мы не копируем — мы слушаем, как должен тикать именно этот экземпляр.</p>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Мастерство -->
-  <section id="craft" class="section">
-    <div class="section-inner">
-      <div class="section-text">
-        <span class="section-number">03</span>
-        <h2>Мастерство</h2>
-        <p>Макро-взгляд на то, что обычно скрыто. Шестерёнки, пружины, баланс — всё имеет вес и характер.</p>
-      </div>
-      <div class="section-image">
-        <img src="IMG_8908.jpeg" alt="Механизм">
+    <div class="layer" id="layer-craft">
+      <button class="layer-close">×</button>
+      <div class="layer-content">
+        <img src="IMG_8908.jpeg" alt="">
+        <div class="layer-text">
+          <h2>Мастерство</h2>
+          <p>Макро-взгляд на то, что обычно скрыто. Шестерёнки, пружины, баланс — всё имеет вес и характер.</p>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Две фотографии -->
-  <section class="section-wide">
-    <div class="two-cols">
-      <div class="col-img"><img src="IMG_8911.jpeg" alt="Свет"></div>
-      <div class="col-img"><img src="IMG_8914.jpeg" alt="Эскизы"></div>
-    </div>
-  </section>
-
-  <!-- Журнал -->
-  <section id="journal" class="section">
-    <div class="section-inner">
-      <div class="section-image">
-        <img src="IMG_8915.jpeg" alt="Стекло">
-      </div>
-      <div class="section-text">
-        <span class="section-number">04</span>
-        <h2>Журнал</h2>
-        <p>Записи о процессе, материалах и тихих открытиях. Здесь нет новостей — только наблюдения.</p>
+    <div class="layer" id="layer-journal">
+      <button class="layer-close">×</button>
+      <div class="layer-content">
+        <img src="IMG_8915.jpeg" alt="">
+        <div class="layer-text">
+          <h2>Журнал</h2>
+          <p>Записи о процессе, материалах и тихих открытиях. Здесь нет новостей — только наблюдения.</p>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Полная ширина -->
-  <section class="section-full">
-    <img src="IMG_8916.jpeg" alt="Мастерская" class="full-image">
-  </section>
-
-  <!-- Контакты -->
-  <section id="contact" class="section section-dark">
-    <div class="contact-inner">
-      <img src="IMG_8735.jpeg" alt="AK" class="contact-logo">
-      <h2>Контакты</h2>
-      <p class="contact-city">Сургут</p>
-      <p class="contact-note">Это выдуманный сайт.<br>Все совпадения случайны.</p>
-      <a href="https://vk.ru/id_aikharisov" target="_blank" class="contact-btn">Написать в ВК</a>
+    <div class="layer" id="layer-contact">
+      <button class="layer-close">×</button>
+      <div class="layer-content contact-layer">
+        <img src="IMG_8735.png" alt="AK" class="contact-logo">
+        <h2>Контакты</h2>
+        <p>Сургут</p>
+        <p class="note">Это выдуманный сайт.<br>Все совпадения случайны.</p>
+        <a href="https://vk.ru/id_aikharisov" target="_blank" class="contact-btn">Написать в ВК</a>
+      </div>
     </div>
-  </section>
 
-  <!-- Футер -->
-  <footer class="footer">
-    <img src="IMG_8917.jpeg" alt="" class="footer-bg">
-    <div class="footer-content">
-      <img src="IMG_8918.jpeg" alt="" class="footer-gear">
-      <p>Тихий ход © 2026</p>
-    </div>
-  </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
