@@ -1,146 +1,41 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Тихий ход — Ателье механических часов | Сургут</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
-</head>
-<body>
-
-  <!-- Прелоадер -->
-  <div id="preloader">
-    <img src="IMG_8735.png" alt="AK" class="preloader-logo">
-  </div>
-
-  <!-- Попап -->
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <p>Это выдуманный сайт.<br>Все совпадения случайны.</p>
-      <p class="popup-q">Хотите заказать сайт?</p>
-      <a href="https://vk.ru/id_aikharisov" target="_blank" class="popup-btn">Написать в ВК</a>
-      <button id="popup-close">Закрыть</button>
+<div class="gears">
+  <button class="gear gear-1" data-layer="atelier" style="--i:0">
+    <div class="gear-visual">
+      <img src="IMG_8918.jpeg" alt="">
+      <span class="gear-num">01</span>
     </div>
-  </div>
+    <span class="gear-name">Ателье</span>
+  </button>
 
-  <!-- Фиксированный логотип -->
-  <div class="fixed-logo">
-    <img src="IMG_8735.png" alt="AK">
-  </div>
-
-  <!-- Главный экран-механизм -->
-  <main class="mechanism">
-
-    <!-- Фон -->
-    <div class="mech-bg" style="background-image: url('IMG_8908.jpeg')"></div>
-    <div class="mech-overlay"></div>
-
-    <!-- Центральные часы -->
-    <div class="clock-core">
-      <div class="clock-ring"></div>
-      <div class="clock-face">
-        <div class="time" id="clock-time">00:00</div>
-        <div class="label">мягкое время</div>
-        <div class="date" id="clock-date"></div>
-      </div>
+  <button class="gear gear-2" data-layer="create" style="--i:1">
+    <div class="gear-visual">
+      <img src="IMG_8918.jpeg" alt="">
+      <span class="gear-num">02</span>
     </div>
+    <span class="gear-name">Создание</span>
+  </button>
 
-    <!-- Шестерёнки меню (по кругу) -->
-    <div class="gears">
-      <button class="gear" data-layer="atelier" style="--i:0">
-        <img src="IMG_8918.jpeg" alt="">
-        <span>Ателье</span>
-      </button>
-      <button class="gear" data-layer="create" style="--i:1">
-        <img src="IMG_8918.jpeg" alt="">
-        <span>Создание</span>
-      </button>
-      <button class="gear" data-layer="craft" style="--i:2">
-        <img src="IMG_8918.jpeg" alt="">
-        <span>Мастерство</span>
-      </button>
-      <button class="gear" data-layer="journal" style="--i:3">
-        <img src="IMG_8918.jpeg" alt="">
-        <span>Журнал</span>
-      </button>
-      <button class="gear" data-layer="contact" style="--i:4">
-        <img src="IMG_8918.jpeg" alt="">
-        <span>Контакты</span>
-      </button>
+  <button class="gear gear-3" data-layer="craft" style="--i:2">
+    <div class="gear-visual">
+      <img src="IMG_8918.jpeg" alt="">
+      <span class="gear-num">03</span>
     </div>
+    <span class="gear-name">Мастерство</span>
+  </button>
 
-    <!-- Название -->
-    <div class="mech-title">
-      <h1>Тихий ход</h1>
-      <p>Сургут</p>
+  <button class="gear gear-4" data-layer="journal" style="--i:3">
+    <div class="gear-visual">
+      <img src="IMG_8918.jpeg" alt="">
+      <span class="gear-num">04</span>
     </div>
+    <span class="gear-name">Журнал</span>
+  </button>
 
-  </main>
-
-  <!-- Слои контента (появляются поверх) -->
-  <div class="layers">
-
-    <div class="layer" id="layer-atelier">
-      <button class="layer-close">×</button>
-      <div class="layer-content">
-        <img src="IMG_8910.jpeg" alt="">
-        <div class="layer-text">
-          <h2>Ателье</h2>
-          <p>Мы создаём механические часы вручную. Каждая деталь проходит через руки мастера. Никакой спешки — только точность и тишина.</p>
-          <p class="note">Сургут · Независимое ателье</p>
-        </div>
-      </div>
+  <button class="gear gear-5" data-layer="contact" style="--i:4">
+    <div class="gear-visual">
+      <img src="IMG_8918.jpeg" alt="">
+      <span class="gear-num">05</span>
     </div>
-
-    <div class="layer" id="layer-create">
-      <button class="layer-close">×</button>
-      <div class="layer-content">
-        <img src="IMG_8912.jpeg" alt="">
-        <div class="layer-text">
-          <h2>Создание</h2>
-          <p>Каждый механизм собирается с нуля. Мы не копируем — мы слушаем, как должен тикать именно этот экземпляр.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="layer" id="layer-craft">
-      <button class="layer-close">×</button>
-      <div class="layer-content">
-        <img src="IMG_8908.jpeg" alt="">
-        <div class="layer-text">
-          <h2>Мастерство</h2>
-          <p>Макро-взгляд на то, что обычно скрыто. Шестерёнки, пружины, баланс — всё имеет вес и характер.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="layer" id="layer-journal">
-      <button class="layer-close">×</button>
-      <div class="layer-content">
-        <img src="IMG_8915.jpeg" alt="">
-        <div class="layer-text">
-          <h2>Журнал</h2>
-          <p>Записи о процессе, материалах и тихих открытиях. Здесь нет новостей — только наблюдения.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="layer" id="layer-contact">
-      <button class="layer-close">×</button>
-      <div class="layer-content contact-layer">
-        <img src="IMG_8735.png" alt="AK" class="contact-logo">
-        <h2>Контакты</h2>
-        <p>Сургут</p>
-        <p class="note">Это выдуманный сайт.<br>Все совпадения случайны.</p>
-        <a href="https://vk.ru/id_aikharisov" target="_blank" class="contact-btn">Написать в ВК</a>
-      </div>
-    </div>
-
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <span class="gear-name">Контакты</span>
+  </button>
+</div>
