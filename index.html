@@ -7,13 +7,16 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- Прелоадер -->
   <div id="preloader">
-    <img src="IMG_8735.jpeg" alt="AK" class="preloader-logo">
+    <div class="preloader-inner">
+      <img src="IMG_8735.jpeg" alt="AK" class="preloader-logo">
+      <div class="preloader-text">Тихий ход</div>
+    </div>
   </div>
 
   <!-- Попап -->
@@ -26,48 +29,48 @@
     </div>
   </div>
 
-  <!-- Шапка -->
-  <header class="header">
-    <div class="logo-small">
-      <img src="IMG_8735.jpeg" alt="AK">
-    </div>
-    <nav class="nav">
-      <a href="#atelier">Ателье</a>
-      <a href="#collections">Коллекции</a>
-      <a href="#craft">Мастерство</a>
-      <a href="#journal">Журнал</a>
-      <a href="#contact">Контакты</a>
-    </nav>
-  </header>
+  <!-- Вертикальное меню справа -->
+  <nav class="side-nav">
+    <a href="#hero" class="nav-item active" data-label="Главная"><span></span></a>
+    <a href="#atelier" class="nav-item" data-label="Ателье"><span></span></a>
+    <a href="#collections" class="nav-item" data-label="Создание"><span></span></a>
+    <a href="#craft" class="nav-item" data-label="Мастерство"><span></span></a>
+    <a href="#journal" class="nav-item" data-label="Журнал"><span></span></a>
+    <a href="#contact" class="nav-item" data-label="Контакты"><span></span></a>
+  </nav>
+
+  <!-- Маленький логотип слева сверху -->
+  <div class="fixed-logo">
+    <img src="IMG_8735.jpeg" alt="AK">
+  </div>
 
   <!-- Hero -->
-  <section class="hero">
+  <section id="hero" class="hero">
     <div class="hero-bg" style="background-image: url('IMG_8908.jpeg')"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-label">Ателье механических часов</p>
-      <h1 class="hero-title">Тихий ход</h1>
-      <p class="hero-sub">Сургут</p>
+      <h1 class="hero-title">Тихий<br>ход</h1>
+      <p class="hero-city">Сургут</p>
 
       <div class="soft-clock">
-        <div class="clock-face">
-          <div class="clock-time" id="clock-time">00:00:00</div>
-          <div class="clock-label">мягкое время</div>
-          <div class="clock-date" id="clock-date"></div>
-        </div>
+        <div class="clock-time" id="clock-time">00:00:00</div>
+        <div class="clock-label">мягкое время</div>
+        <div class="clock-date" id="clock-date"></div>
       </div>
-
-      <a href="#atelier" class="hero-btn">Открыть ателье</a>
     </div>
+
+    <div class="scroll-hint">листайте вниз</div>
   </section>
 
   <!-- Ателье -->
   <section id="atelier" class="section">
     <div class="section-inner">
       <div class="section-text">
+        <span class="section-number">01</span>
         <h2>Ателье</h2>
         <p>Мы создаём механические часы вручную. Каждая деталь проходит через руки мастера. Никакой спешки — только точность и тишина.</p>
-        <p>Сургут. Независимое ателье.</p>
+        <p class="section-note">Сургут · Независимое ателье</p>
       </div>
       <div class="section-image">
         <img src="IMG_8910.jpeg" alt="Рабочий стол">
@@ -82,6 +85,7 @@
         <img src="IMG_8912.jpeg" alt="Детали">
       </div>
       <div class="section-text">
+        <span class="section-number">02</span>
         <h2>Создание</h2>
         <p>Каждый механизм собирается с нуля. Мы не копируем — мы слушаем, как должен тикать именно этот экземпляр.</p>
       </div>
@@ -92,6 +96,7 @@
   <section id="craft" class="section">
     <div class="section-inner">
       <div class="section-text">
+        <span class="section-number">03</span>
         <h2>Мастерство</h2>
         <p>Макро-взгляд на то, что обычно скрыто. Шестерёнки, пружины, баланс — всё имеет вес и характер.</p>
       </div>
@@ -101,11 +106,11 @@
     </div>
   </section>
 
-  <!-- Две колонки -->
-  <section class="section section-wide">
+  <!-- Две фотографии -->
+  <section class="section-wide">
     <div class="two-cols">
-      <img src="IMG_8911.jpeg" alt="Свет">
-      <img src="IMG_8914.jpeg" alt="Эскизы">
+      <div class="col-img"><img src="IMG_8911.jpeg" alt="Свет"></div>
+      <div class="col-img"><img src="IMG_8914.jpeg" alt="Эскизы"></div>
     </div>
   </section>
 
@@ -116,6 +121,7 @@
         <img src="IMG_8915.jpeg" alt="Стекло">
       </div>
       <div class="section-text">
+        <span class="section-number">04</span>
         <h2>Журнал</h2>
         <p>Записи о процессе, материалах и тихих открытиях. Здесь нет новостей — только наблюдения.</p>
       </div>
@@ -123,7 +129,7 @@
   </section>
 
   <!-- Полная ширина -->
-  <section class="section section-full">
+  <section class="section-full">
     <img src="IMG_8916.jpeg" alt="Мастерская" class="full-image">
   </section>
 
@@ -132,7 +138,7 @@
     <div class="contact-inner">
       <img src="IMG_8735.jpeg" alt="AK" class="contact-logo">
       <h2>Контакты</h2>
-      <p>Сургут</p>
+      <p class="contact-city">Сургут</p>
       <p class="contact-note">Это выдуманный сайт.<br>Все совпадения случайны.</p>
       <a href="https://vk.ru/id_aikharisov" target="_blank" class="contact-btn">Написать в ВК</a>
     </div>
