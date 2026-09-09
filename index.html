@@ -31,22 +31,39 @@
     <a href="#" class="logo">
       <img src="IMG_8735.png" alt="AK">
     </a>
-    <nav class="nav">
+
+    <nav class="nav desktop-nav">
       <a href="#atelier">Ателье</a>
       <a href="#create">Создание</a>
       <a href="#craft">Мастерство</a>
       <a href="#contact">Контакты</a>
     </nav>
+
+    <button class="burger" id="burger" aria-label="Меню">
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
+  <!-- Мобильное меню -->
+  <div class="mobile-menu" id="mobile-menu">
+    <nav>
+      <a href="#atelier" class="mobile-link">Ателье</a>
+      <a href="#create" class="mobile-link">Создание</a>
+      <a href="#craft" class="mobile-link">Мастерство</a>
+      <a href="#contact" class="mobile-link">Контакты</a>
+    </nav>
+  </div>
+
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" id="top">
     <div class="hero-bg" style="background-image: url('IMG_8908.jpeg')"></div>
+    <div class="hero-line"></div>
     <div class="hero-content">
       <p class="hero-subtitle">Ателье механических часов</p>
       <h1 class="hero-title">Тихий ход</h1>
       <p class="hero-city">Сургут</p>
-      
+
       <div class="clock">
         <div class="clock-time" id="clock-time">00:00</div>
         <div class="clock-label">мягкое время</div>
@@ -112,6 +129,9 @@
       <a href="https://vk.ru/id_aikharisov" target="_blank" class="contact-btn">Написать в ВК</a>
     </div>
   </section>
+
+  <!-- Кнопка наверх -->
+  <button id="to-top" class="to-top" aria-label="Наверх">↑</button>
 
   <script src="script.js"></script>
 </body>
