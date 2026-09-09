@@ -104,8 +104,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.4rem 2.8rem;
-  mix-blend-mode: difference;
+  padding: 1.3rem 2.8rem;
+  background: rgba(12, 12, 12, 0.82);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .logo img {
@@ -120,7 +122,7 @@ body {
 }
 
 .desktop-nav a {
-  color: #fff;
+  color: var(--text);
   text-decoration: none;
   font-size: 0.84rem;
   letter-spacing: 0.1em;
@@ -149,7 +151,7 @@ body {
 .burger span {
   display: block;
   height: 1.5px;
-  background: #fff;
+  background: var(--text);
   transition: 0.3s;
 }
 
@@ -388,7 +390,7 @@ body {
   width: 46px;
   height: 46px;
   border: 1px solid rgba(185, 165, 122, 0.4);
-  background: rgba(12, 12, 12, 0.8);
+  background: rgba(12, 12, 12, 0.85);
   color: var(--brass);
   font-size: 1.2rem;
   cursor: pointer;
