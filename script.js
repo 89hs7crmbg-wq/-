@@ -2,14 +2,14 @@
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('preloader').classList.add('hide');
-  }, 2000);
+  }, 2100);
 });
 
 // Попап
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('popup').classList.add('show');
-  }, 4200);
+  }, 4300);
 });
 
 document.getElementById('popup-close').addEventListener('click', () => {
@@ -43,14 +43,11 @@ menuBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     const layer = btn.dataset.layer;
 
-    // Убираем активный класс у всех кнопок
     menuBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    // Закрываем все панели
     panels.forEach(p => p.classList.remove('active'));
 
-    // Если не главная — открываем нужную панель
     if (layer !== 'home') {
       document.getElementById(`panel-${layer}`).classList.add('active');
     }
@@ -61,7 +58,6 @@ menuBtns.forEach(btn => {
 document.querySelectorAll('.panel-close').forEach(btn => {
   btn.addEventListener('click', () => {
     btn.closest('.panel').classList.remove('active');
-    // Возвращаем активный класс на "Главная"
     menuBtns.forEach(b => b.classList.remove('active'));
     document.querySelector('[data-layer="home"]').classList.add('active');
   });
