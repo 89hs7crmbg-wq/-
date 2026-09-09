@@ -2,7 +2,7 @@
   --ivory: #f2ede4;
   --brass: #b8a37c;
   --dark: #0d0d0d;
-  --muted: rgba(242, 237, 228, 0.55);
+  --muted: rgba(242, 237, 228, 0.5);
 }
 
 * {
@@ -19,7 +19,7 @@ body {
   height: 100vh;
 }
 
-/* Прелоадер */
+/* ===== Прелоадер ===== */
 #preloader {
   position: fixed;
   inset: 0;
@@ -35,20 +35,20 @@ body {
   visibility: hidden;
 }
 .preloader-logo {
-  width: 90px;
+  width: 88px;
   filter: invert(1) brightness(1.9);
-  animation: pulse 2.3s ease-in-out infinite;
+  animation: pulse 2.4s ease-in-out infinite;
 }
 @keyframes pulse {
   0%, 100% { opacity: 0.4; transform: scale(0.96); }
   50% { opacity: 1; transform: scale(1); }
 }
 
-/* Попап */
+/* ===== Попап ===== */
 .popup {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.87);
+  background: rgba(0,0,0,0.88);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,6 +80,10 @@ body {
   padding: 0.9rem 2rem;
   text-decoration: none;
   margin-bottom: 1rem;
+  transition: background 0.3s;
+}
+.popup-btn:hover {
+  background: #000;
 }
 #popup-close {
   background: none;
@@ -90,7 +94,7 @@ body {
   font-size: 0.85rem;
 }
 
-/* Логотип */
+/* ===== Логотип ===== */
 .fixed-logo {
   position: fixed;
   top: 2.2rem;
@@ -101,18 +105,22 @@ body {
   width: 42px;
   filter: invert(1) brightness(1.9);
   opacity: 0.85;
+  transition: opacity 0.3s;
+}
+.fixed-logo img:hover {
+  opacity: 1;
 }
 
-/* Боковое меню */
+/* ===== Боковое меню ===== */
 .side-menu {
   position: fixed;
-  left: 2.5rem;
+  left: 2.8rem;
   top: 50%;
   transform: translateY(-50%);
   z-index: 100;
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.5rem;
 }
 
 .menu-btn {
@@ -120,17 +128,21 @@ body {
   border: none;
   color: var(--muted);
   font-family: 'Manrope', sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
+  font-size: 0.84rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   cursor: pointer;
   text-align: left;
   padding: 0;
-  transition: color 0.3s ease;
+  transition: all 0.35s ease;
   position: relative;
 }
 
-.menu-btn:hover,
+.menu-btn:hover {
+  color: var(--ivory);
+  transform: translateX(5px);
+}
+
 .menu-btn.active {
   color: var(--ivory);
 }
@@ -138,7 +150,7 @@ body {
 .menu-btn.active::before {
   content: '';
   position: absolute;
-  left: -14px;
+  left: -16px;
   top: 50%;
   transform: translateY(-50%);
   width: 5px;
@@ -147,7 +159,7 @@ body {
   border-radius: 50%;
 }
 
-/* Hero */
+/* ===== Hero ===== */
 .hero {
   position: relative;
   width: 100vw;
@@ -160,16 +172,22 @@ body {
 
 .hero-bg {
   position: absolute;
-  inset: -20px;
+  inset: -30px;
   background-size: cover;
   background-position: center;
-  opacity: 0.5;
+  opacity: 0.48;
+  animation: bg-slow 30s ease-in-out infinite alternate;
+}
+
+@keyframes bg-slow {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, transparent 0%, rgba(8,8,8,0.75) 70%);
+  background: radial-gradient(circle at center, transparent 0%, rgba(8,8,8,0.78) 72%);
 }
 
 .hero-content {
@@ -180,41 +198,53 @@ body {
 
 .hero-label {
   font-size: 0.78rem;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   opacity: 0.55;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
 }
 
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(3.8rem, 9vw, 7.5rem);
+  font-size: clamp(3.8rem, 9vw, 7.8rem);
   font-weight: 500;
-  line-height: 1;
-  margin-bottom: 0.8rem;
+  line-height: 0.95;
+  margin-bottom: 0.9rem;
   letter-spacing: -0.02em;
 }
 
 .hero-city {
   font-size: 0.95rem;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.38em;
   text-transform: uppercase;
   opacity: 0.45;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3.8rem;
 }
 
 /* Часы */
 .clock {
   display: inline-block;
-  padding: 1.5rem 2.2rem;
+  padding: 1.6rem 2.4rem;
   border: 1px solid rgba(184, 163, 124, 0.3);
   background: rgba(242, 237, 228, 0.04);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
+  animation: clock-breathe 7s ease-in-out infinite;
+}
+
+@keyframes clock-breathe {
+  0%, 100% {
+    transform: scale(1);
+    border-color: rgba(184, 163, 124, 0.28);
+  }
+  50% {
+    transform: scale(1.02);
+    border-color: rgba(184, 163, 124, 0.48);
+  }
 }
 
 .clock-time {
   font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
+  font-size: 2.9rem;
   color: var(--brass);
   letter-spacing: 0.1em;
   font-variant-numeric: tabular-nums;
@@ -222,10 +252,10 @@ body {
 
 .clock-label {
   font-size: 0.7rem;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   opacity: 0.5;
-  margin: 0.4rem 0 0.3rem;
+  margin: 0.45rem 0 0.35rem;
 }
 
 .clock-date {
@@ -233,7 +263,7 @@ body {
   opacity: 0.4;
 }
 
-/* Панели */
+/* ===== Панели ===== */
 .panels {
   position: fixed;
   inset: 0;
@@ -244,31 +274,33 @@ body {
 .panel {
   position: absolute;
   inset: 0;
-  background: rgba(9, 9, 9, 0.95);
+  background: rgba(9, 9, 9, 0.96);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.5s ease;
+  transform: translateY(40px);
+  transition: opacity 0.55s ease, transform 0.55s ease, visibility 0.55s;
   pointer-events: none;
 }
 
 .panel.active {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
   pointer-events: all;
 }
 
 .panel-close {
   position: absolute;
   top: 2rem;
-  right: 2.5rem;
+  right: 2.8rem;
   background: none;
   border: none;
   color: var(--muted);
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
+  font-size: 0.88rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
   transition: color 0.3s;
@@ -286,10 +318,32 @@ body {
   padding: 2rem;
 }
 
+.panel-image {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
+}
+
+.panel.active .panel-image {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .panel-image img {
-  width: 380px;
+  width: 390px;
   height: auto;
   display: block;
+}
+
+.panel-text {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+}
+
+.panel.active .panel-text {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .panel-num {
@@ -302,16 +356,16 @@ body {
 
 .panel-text h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
+  font-size: 2.9rem;
   font-weight: 500;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.5rem;
 }
 
 .panel-text p {
   font-size: 1.1rem;
   opacity: 0.75;
-  max-width: 380px;
-  line-height: 1.7;
+  max-width: 390px;
+  line-height: 1.75;
   margin-bottom: 1rem;
 }
 
@@ -328,19 +382,19 @@ body {
 }
 
 .contact-logo {
-  width: 76px;
+  width: 78px;
   margin-bottom: 1.8rem;
   filter: invert(1) brightness(1.9);
 }
 
 .contact-panel h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.6rem;
+  font-size: 2.7rem;
   margin-bottom: 0.5rem;
 }
 
 .contact-city {
-  letter-spacing: 0.25em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   font-size: 0.9rem;
   opacity: 0.5;
@@ -349,7 +403,7 @@ body {
 
 .contact-note {
   opacity: 0.5;
-  margin-bottom: 2.2rem;
+  margin-bottom: 2.3rem;
   line-height: 1.6;
 }
 
@@ -357,23 +411,24 @@ body {
   display: inline-block;
   background: var(--brass);
   color: #111;
-  padding: 1rem 2.6rem;
+  padding: 1.05rem 2.7rem;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  transition: all 0.3s;
 }
 
 .contact-btn:hover {
   background: #c9b48a;
+  transform: translateY(-2px);
 }
 
 /* Адаптив */
 @media (max-width: 900px) {
   .side-menu {
-    left: 1.5rem;
+    left: 1.6rem;
   }
   .fixed-logo {
-    right: 1.5rem;
+    right: 1.6rem;
   }
   .panel-inner {
     flex-direction: column;
@@ -381,9 +436,9 @@ body {
     text-align: center;
   }
   .panel-image img {
-    width: 260px;
+    width: 270px;
   }
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.6rem;
   }
 }
