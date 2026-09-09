@@ -18,143 +18,100 @@
 
   <!-- Попап -->
   <div id="popup" class="popup">
-    <div class="popup-content">
+    <div class="popup-box">
       <p>Это выдуманный сайт.<br>Все совпадения случайны.</p>
-      <p class="popup-q">Хотите заказать сайт?</p>
+      <p class="popup-question">Хотите заказать сайт?</p>
       <a href="https://vk.ru/id_aikharisov" target="_blank" class="popup-btn">Написать в ВК</a>
-      <button id="popup-close">Закрыть</button>
+      <button class="popup-close" id="popup-close">Закрыть</button>
     </div>
   </div>
 
-  <!-- Мобильная шапка -->
-  <div class="mobile-header">
-    <button class="burger" id="burger">
-      <span></span>
-      <span></span>
-    </button>
-    <div class="mobile-logo">
+  <!-- Шапка -->
+  <header class="header">
+    <a href="#" class="logo">
       <img src="IMG_8735.png" alt="AK">
-    </div>
-  </div>
-
-  <!-- Мобильное меню -->
-  <div class="mobile-menu" id="mobile-menu">
-    <button class="mobile-menu-close" id="mobile-menu-close">Закрыть</button>
-    <nav>
-      <button class="mobile-link" data-layer="home">Главная</button>
-      <button class="mobile-link" data-layer="atelier">Ателье</button>
-      <button class="mobile-link" data-layer="create">Создание</button>
-      <button class="mobile-link" data-layer="craft">Мастерство</button>
-      <button class="mobile-link" data-layer="journal">Журнал</button>
-      <button class="mobile-link" data-layer="contact">Контакты</button>
+    </a>
+    <nav class="nav">
+      <a href="#atelier">Ателье</a>
+      <a href="#create">Создание</a>
+      <a href="#craft">Мастерство</a>
+      <a href="#contact">Контакты</a>
     </nav>
-  </div>
+  </header>
 
-  <!-- Десктопное боковое меню -->
-  <nav class="side-menu">
-    <button class="menu-btn active" data-layer="home">Главная</button>
-    <button class="menu-btn" data-layer="atelier">Ателье</button>
-    <button class="menu-btn" data-layer="create">Создание</button>
-    <button class="menu-btn" data-layer="craft">Мастерство</button>
-    <button class="menu-btn" data-layer="journal">Журнал</button>
-    <button class="menu-btn" data-layer="contact">Контакты</button>
-  </nav>
-
-  <!-- Логотип (только десктоп) -->
-  <div class="fixed-logo">
-    <img src="IMG_8735.png" alt="AK">
-  </div>
-
-  <!-- Главный экран -->
-  <section class="hero" id="home">
+  <!-- Hero -->
+  <section class="hero">
     <div class="hero-bg" style="background-image: url('IMG_8908.jpeg')"></div>
-    <div class="hero-overlay"></div>
-
     <div class="hero-content">
-      <p class="hero-label">Ателье механических часов</p>
+      <p class="hero-subtitle">Ателье механических часов</p>
       <h1 class="hero-title">Тихий ход</h1>
       <p class="hero-city">Сургут</p>
-
+      
       <div class="clock">
         <div class="clock-time" id="clock-time">00:00</div>
         <div class="clock-label">мягкое время</div>
-        <div class="clock-date" id="clock-date"></div>
       </div>
     </div>
   </section>
 
-  <!-- Панели -->
-  <div class="panels">
-
-    <div class="panel" id="panel-atelier">
-      <button class="panel-close">Закрыть</button>
-      <div class="panel-inner">
-        <div class="panel-image">
-          <img src="IMG_8910.jpeg" alt="Ателье">
-        </div>
-        <div class="panel-text">
-          <span class="panel-num">01</span>
+  <!-- Ателье -->
+  <section class="section" id="atelier">
+    <div class="container">
+      <div class="section-grid">
+        <div class="section-text">
+          <span class="section-number">01</span>
           <h2>Ателье</h2>
           <p>Мы создаём механические часы вручную. Каждая деталь проходит через руки мастера. Никакой спешки — только точность и тишина.</p>
-          <p class="panel-note">Сургут · Независимое ателье</p>
+        </div>
+        <div class="section-image">
+          <img src="IMG_8910.jpeg" alt="Ателье">
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="panel" id="panel-create">
-      <button class="panel-close">Закрыть</button>
-      <div class="panel-inner">
-        <div class="panel-image">
+  <!-- Создание -->
+  <section class="section section-dark" id="create">
+    <div class="container">
+      <div class="section-grid reverse">
+        <div class="section-image">
           <img src="IMG_8912.jpeg" alt="Создание">
         </div>
-        <div class="panel-text">
-          <span class="panel-num">02</span>
+        <div class="section-text">
+          <span class="section-number">02</span>
           <h2>Создание</h2>
           <p>Каждый механизм собирается с нуля. Мы не копируем — мы слушаем, как должен тикать именно этот экземпляр.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="panel" id="panel-craft">
-      <button class="panel-close">Закрыть</button>
-      <div class="panel-inner">
-        <div class="panel-image">
+  <!-- Мастерство -->
+  <section class="section" id="craft">
+    <div class="container">
+      <div class="section-grid">
+        <div class="section-text">
+          <span class="section-number">03</span>
+          <h2>Мастерство</h2>
+          <p>Точность, терпение и внимание к каждой детали. Здесь нет места спешке.</p>
+        </div>
+        <div class="section-image">
           <img src="IMG_8911.jpeg" alt="Мастерство">
         </div>
-        <div class="panel-text">
-          <span class="panel-num">03</span>
-          <h2>Мастерство</h2>
-          <p>Макро-взгляд на то, что обычно скрыто. Точность, терпение и внимание к каждой детали.</p>
-        </div>
       </div>
     </div>
+  </section>
 
-    <div class="panel" id="panel-journal">
-      <button class="panel-close">Закрыть</button>
-      <div class="panel-inner">
-        <div class="panel-image">
-          <img src="IMG_8915.jpeg" alt="Журнал">
-        </div>
-        <div class="panel-text">
-          <span class="panel-num">04</span>
-          <h2>Журнал</h2>
-          <p>Записи о процессе, материалах и тихих открытиях. Здесь нет новостей — только наблюдения.</p>
-        </div>
-      </div>
+  <!-- Контакты -->
+  <section class="section section-dark" id="contact">
+    <div class="container contact">
+      <img src="IMG_8735.png" alt="AK" class="contact-logo">
+      <h2>Контакты</h2>
+      <p class="contact-city">Сургут</p>
+      <p class="contact-note">Это выдуманный сайт.<br>Все совпадения случайны.</p>
+      <a href="https://vk.ru/id_aikharisov" target="_blank" class="contact-btn">Написать в ВК</a>
     </div>
-
-    <div class="panel" id="panel-contact">
-      <button class="panel-close">Закрыть</button>
-      <div class="panel-inner contact-panel">
-        <img src="IMG_8735.png" alt="AK" class="contact-logo">
-        <h2>Контакты</h2>
-        <p class="contact-city">Сургут</p>
-        <p class="contact-note">Это выдуманный сайт.<br>Все совпадения случайны.</p>
-        <a href="https://vk.ru/id_aikharisov" target="_blank" class="contact-btn">Написать в ВК</a>
-      </div>
-    </div>
-
-  </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
