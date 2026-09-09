@@ -46,7 +46,7 @@ document.querySelectorAll('.mobile-link').forEach(link => {
   });
 });
 
-// Параллакс героя
+// Параллакс
 const heroBg = document.querySelector('.hero-bg');
 window.addEventListener('scroll', () => {
   const scrolled = window.pageYOffset;
