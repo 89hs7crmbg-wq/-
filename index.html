@@ -11,12 +11,10 @@
 </head>
 <body>
 
-  <!-- Прелоадер -->
   <div id="preloader">
     <img src="IMG_8735.png" alt="AK" class="preloader-logo">
   </div>
 
-  <!-- Попап -->
   <div id="popup" class="popup">
     <div class="popup-box">
       <p>Это выдуманный сайт.<br>Все совпадения случайны.</p>
@@ -26,112 +24,94 @@
     </div>
   </div>
 
-  <!-- Шапка -->
-  <header class="header">
-    <a href="#" class="logo">
+  <!-- Кастомное меню -->
+  <nav class="custom-nav">
+    <div class="nav-logo">
       <img src="IMG_8735.png" alt="AK">
-    </a>
-
-    <nav class="nav desktop-nav">
-      <a href="#atelier">Ателье</a>
-      <a href="#create">Создание</a>
-      <a href="#craft">Мастерство</a>
-      <a href="#contact">Контакты</a>
-    </nav>
-
-    <button class="burger" id="burger" aria-label="Меню">
+    </div>
+    <ul class="nav-list">
+      <li><a href="#atelier" data-text="Ателье">Ателье</a></li>
+      <li><a href="#create" data-text="Создание">Создание</a></li>
+      <li><a href="#craft" data-text="Мастерство">Мастерство</a></li>
+      <li><a href="#contact" data-text="Контакты">Контакты</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle">
       <span></span>
       <span></span>
     </button>
-  </header>
-
-  <!-- Мобильное меню -->
-  <div class="mobile-menu" id="mobile-menu">
-    <nav>
-      <a href="#atelier" class="mobile-link">Ателье</a>
-      <a href="#create" class="mobile-link">Создание</a>
-      <a href="#craft" class="mobile-link">Мастерство</a>
-      <a href="#contact" class="mobile-link">Контакты</a>
-    </nav>
-  </div>
+  </nav>
 
   <!-- Hero -->
   <section class="hero" id="top">
     <div class="hero-bg" style="background-image: url('IMG_8908.jpeg')"></div>
-    <div class="hero-line"></div>
     <div class="hero-content">
-      <p class="hero-subtitle">Ателье механических часов</p>
-      <h1 class="hero-title">Тихий ход</h1>
-      <p class="hero-city">Сургут</p>
+      <p class="hero-label">Ателье механических часов · Сургут</p>
+      <h1 class="hero-title">
+        <span>Тихий</span>
+        <span>ход</span>
+      </h1>
 
       <div class="clock">
         <div class="clock-time" id="clock-time">00:00</div>
-        <div class="clock-label">мягкое время</div>
+        <div class="clock-sub">мягкое время</div>
       </div>
     </div>
   </section>
 
   <!-- Ателье -->
   <section class="section" id="atelier">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-text">
-          <span class="section-number">01</span>
-          <h2>Ателье</h2>
-          <p>Мы создаём механические часы вручную. Каждая деталь проходит через руки мастера. Никакой спешки — только точность и тишина.</p>
-        </div>
-        <div class="section-image">
-          <img src="IMG_8910.jpeg" alt="Ателье">
-        </div>
+    <div class="section-inner">
+      <div class="section-info">
+        <span class="num">01</span>
+        <h2>Ателье</h2>
+        <p>Мы создаём механические часы вручную. Каждая деталь проходит через руки мастера. Никакой спешки — только точность и тишина.</p>
+      </div>
+      <div class="section-visual">
+        <img src="IMG_8910.jpeg" alt="Ателье">
       </div>
     </div>
   </section>
 
   <!-- Создание -->
-  <section class="section section-dark" id="create">
-    <div class="container">
-      <div class="section-grid reverse">
-        <div class="section-image">
-          <img src="IMG_8912.jpeg" alt="Создание">
-        </div>
-        <div class="section-text">
-          <span class="section-number">02</span>
-          <h2>Создание</h2>
-          <p>Каждый механизм собирается с нуля. Мы не копируем — мы слушаем, как должен тикать именно этот экземпляр.</p>
-        </div>
+  <section class="section alt" id="create">
+    <div class="section-inner reverse">
+      <div class="section-visual">
+        <img src="IMG_8912.jpeg" alt="Создание">
+      </div>
+      <div class="section-info">
+        <span class="num">02</span>
+        <h2>Создание</h2>
+        <p>Каждый механизм собирается с нуля. Мы не копируем — мы слушаем, как должен тикать именно этот экземпляр.</p>
       </div>
     </div>
   </section>
 
   <!-- Мастерство -->
   <section class="section" id="craft">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-text">
-          <span class="section-number">03</span>
-          <h2>Мастерство</h2>
-          <p>Точность, терпение и внимание к каждой детали. Здесь нет места спешке.</p>
-        </div>
-        <div class="section-image">
-          <img src="IMG_8911.jpeg" alt="Мастерство">
-        </div>
+    <div class="section-inner">
+      <div class="section-info">
+        <span class="num">03</span>
+        <h2>Мастерство</h2>
+        <p>Точность, терпение и внимание к каждой детали. Здесь нет места спешке.</p>
+      </div>
+      <div class="section-visual">
+        <img src="IMG_8911.jpeg" alt="Мастерство">
       </div>
     </div>
   </section>
 
   <!-- Контакты -->
-  <section class="section section-dark" id="contact">
-    <div class="container contact">
+  <section class="section contact-section" id="contact">
+    <div class="contact-box">
       <img src="IMG_8735.png" alt="AK" class="contact-logo">
       <h2>Контакты</h2>
-      <p class="contact-city">Сургут</p>
-      <p class="contact-note">Это выдуманный сайт.<br>Все совпадения случайны.</p>
-      <a href="https://vk.ru/id_aikharisov" target="_blank" class="contact-btn">Написать в ВК</a>
+      <p class="city">Сургут</p>
+      <p class="note">Это выдуманный сайт.<br>Все совпадения случайны.</p>
+      <a href="https://vk.ru/id_aikharisov" target="_blank" class="btn">Написать в ВК</a>
     </div>
   </section>
 
-  <!-- Кнопка наверх -->
-  <button id="to-top" class="to-top" aria-label="Наверх">↑</button>
+  <button id="to-top" class="to-top">↑</button>
 
   <script src="script.js"></script>
 </body>
