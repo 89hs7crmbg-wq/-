@@ -5,32 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Тихий ход — Ателье | Сургут</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Preloader -->
+  <!-- Кастомный прелоадер -->
   <div id="preloader">
-    <div class="loader">
-      <img src="IMG_8735.png" alt="AK" class="loader-logo">
-      <div class="loader-bar"><span></span></div>
+    <div class="preloader-inner">
+      <div class="preloader-ring"></div>
+      <img src="IMG_8735.png" alt="AK" class="preloader-logo">
+      <p class="preloader-text">Тихий ход</p>
     </div>
   </div>
 
-  <!-- Popup -->
+  <!-- Попап -->
   <div id="popup" class="popup">
     <div class="popup-card">
-      <p>Это выдуманный сайт.<br>Все совпадения случайны.</p>
-      <h3>Хотите заказать сайт?</h3>
-      <a href="https://vk.ru/id_aikharisov" target="_blank" class="btn">Написать в ВК</a>
-      <button id="close-popup">Закрыть</button>
+      <p class="popup-main">Сайт — полная фантазия AIKharisov.<br>Все совпадения случайны.</p>
+      <p class="popup-ask">Хотите заказать сайт?</p>
+      <a href="https://vk.ru/id_aikharisov" target="_blank" class="popup-btn">Написать в ВК</a>
+      <button class="popup-close" id="popup-close">Закрыть</button>
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Меню (сразу понятное) -->
   <header class="header">
     <a href="#" class="logo">
       <img src="IMG_8735.png" alt="AK">
+      <span>Тихий ход</span>
     </a>
     <nav class="nav">
       <a href="#atelier">Ателье</a>
@@ -43,7 +45,7 @@
     </button>
   </header>
 
-  <!-- Mobile menu -->
+  <!-- Мобильное меню -->
   <div class="mobile-menu" id="mobile-menu">
     <a href="#atelier">Ателье</a>
     <a href="#create">Создание</a>
@@ -51,75 +53,76 @@
     <a href="#contact">Контакты</a>
   </div>
 
-  <!-- Hero with Three.js -->
-  <section class="hero" id="top">
-    <canvas id="webgl"></canvas>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('IMG_8908.jpeg')"></div>
     <div class="hero-content">
-      <p class="eyebrow">Механические часы · Сургут</p>
+      <p class="hero-label">Ателье механических часов</p>
       <h1>Тихий ход</h1>
-      <div class="clock">
-        <div id="time">00:00</div>
+      <p class="hero-city">Сургут</p>
+      <div class="hero-clock">
+        <div id="clock">00:00</div>
         <span>мягкое время</span>
       </div>
     </div>
   </section>
 
-  <!-- Atelier -->
+  <!-- Ателье -->
   <section class="section" id="atelier">
     <div class="container">
-      <div class="split">
-        <div class="split-text">
+      <div class="row">
+        <div class="col text">
           <span class="num">01</span>
           <h2>Ателье</h2>
-          <p>Независимое пространство в Сургуте, где создаются механические часы. Каждая деталь проходит через руки мастера. Здесь ценят тишину и точность.</p>
+          <p>Независимое пространство, где рождаются механические часы. Здесь нет конвейера. Есть руки мастера, тишина и внимание к каждой детали.</p>
         </div>
-        <div class="split-img">
+        <div class="col media">
           <img src="IMG_8910.jpeg" alt="Ателье">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Create -->
-  <section class="section alt" id="create">
+  <!-- Создание -->
+  <section class="section soft" id="create">
     <div class="container">
-      <div class="split reverse">
-        <div class="split-img">
+      <div class="row reverse">
+        <div class="col media">
           <img src="IMG_8912.jpeg" alt="Создание">
         </div>
-        <div class="split-text">
+        <div class="col text">
           <span class="num">02</span>
           <h2>Создание</h2>
-          <p>Мы не тиражируем. Каждый механизм собирается с нуля и получает свой характер. Время здесь рождается медленно.</p>
+          <p>Каждый механизм собирается с нуля. Мы не копируем чужие решения — мы ищем собственный ход времени.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Craft -->
+  <!-- Мастерство -->
   <section class="section" id="craft">
     <div class="container">
-      <div class="split">
-        <div class="split-text">
+      <div class="row">
+        <div class="col text">
           <span class="num">03</span>
           <h2>Мастерство</h2>
-          <p>Внимание к микронным деталям, к звуку хода, к тому, как свет ложится на металл. Это ремесло, а не производство.</p>
+          <p>Точность до микрона. Терпение. Умение слышать, как должен звучать правильный механизм.</p>
         </div>
-        <div class="split-img">
+        <div class="col media">
           <img src="IMG_8911.jpeg" alt="Мастерство">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Контакты -->
   <section class="section contact" id="contact">
     <div class="container">
       <div class="contact-box">
         <img src="IMG_8735.png" alt="AK" class="contact-logo">
         <h2>Контакты</h2>
         <p class="city">Сургут</p>
-        <p class="note">Это выдуманный сайт.<br>Все совпадения случайны.</p>
+        <p class="note">Сайт — полная фантазия AIKharisov.<br>Все совпадения случайны.</p>
         <a href="https://vk.ru/id_aikharisov" target="_blank" class="btn">Написать в ВК</a>
       </div>
     </div>
@@ -127,7 +130,6 @@
 
   <button class="to-top" id="to-top">↑</button>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
