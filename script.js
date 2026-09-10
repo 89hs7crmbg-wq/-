@@ -1,48 +1,56 @@
 // Preloader
 window.addEventListener('load', () => {
-  setTimeout(() => document.getElementById('preloader').classList.add('hide'), 1700);
+  setTimeout(() => {
+    document.getElementById('preloader').classList.add('done');
+  }, 1800);
 });
 
 // Popup
 window.addEventListener('load', () => {
-  setTimeout(() => document.getElementById('popup').classList.add('show'), 3600);
+  setTimeout(() => {
+    document.getElementById('popup').classList.add('active');
+  }, 4000);
 });
-document.getElementById('close-popup').onclick = () => {
-  document.getElementById('popup').classList.remove('show');
-};
-document.getElementById('popup').onclick = e => {
-  if (e.target.id === 'popup') document.getElementById('popup').classList.remove('show');
-};
+
+document.getElementById('popup-close').addEventListener('click', () => {
+  document.getElementById('popup').classList.remove('active');
+});
+
+document.getElementById('popup').addEventListener('click', (e) => {
+  if (e.target.id === 'popup') {
+    document.getElementById('popup').classList.remove('active');
+  }
+});
 
 // Clock
-function updateTime() {
-  const n = new Date();
-  document.getElementById('time').textContent = 
-    String(n.getHours()).padStart(2,'0') + ':' + String(n.getMinutes()).padStart(2,'0');
+function updateClock() {
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2, '0');
+  const m = String(now.getMinutes()).padStart(2, '0');
+  document.getElementById('clock').textContent = `${h}:${m}`;
 }
-updateTime();
-setInterval(updateTime, 1000);
+updateClock();
+setInterval(updateClock, 1000);
 
 // Mobile menu
-const burger = document.getElementById('burger');
-const mobile = document.getElementById('mobile-menu');
-burger.onclick = () => mobile.classList.toggle('open');
-document.querySelectorAll('.mobile-menu a').forEach(a => {
-  a.onclick = () => mobile.classList.remove('open');
+const burger = document.getElementById('mobile-burger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+burger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
 });
 
-// Scroll animations
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('active');
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
   });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.anim, .anim-img').forEach(el => observer.observe(el));
+});
 
 // To top
 const toTop = document.getElementById('to-top');
 window.addEventListener('scroll', () => {
-  toTop.classList.toggle('show', window.scrollY > 700);
+  toTop.classList.toggle('visible', window.scrollY > 800);
 });
-toTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+toTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
