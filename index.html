@@ -13,18 +13,19 @@
 
   <!-- Preloader -->
   <div id="preloader">
-    <div class="loader-inner">
-      <img src="IMG_8735.png" alt="AK" class="loader-logo">
+    <div class="preloader-content">
+      <img src="IMG_8735.png" alt="AK" class="preloader-logo">
+      <div class="preloader-bar"></div>
     </div>
   </div>
 
   <!-- Popup -->
   <div id="popup" class="popup">
     <div class="popup-card">
-      <p class="popup-text">Это выдуманный сайт.<br>Все совпадения случайны.</p>
-      <p class="popup-title">Хотите заказать сайт?</p>
-      <a href="https://vk.ru/id_aikharisov" target="_blank" class="popup-button">Написать в ВК</a>
-      <button id="popup-close" class="popup-close">Закрыть</button>
+      <p>Это выдуманный сайт.<br>Все совпадения случайны.</p>
+      <h3>Хотите заказать сайт?</h3>
+      <a href="https://vk.ru/id_aikharisov" target="_blank" class="btn">Написать в ВК</a>
+      <button id="popup-close">Закрыть</button>
     </div>
   </div>
 
@@ -33,39 +34,35 @@
     <a href="#" class="logo">
       <img src="IMG_8735.png" alt="AK">
     </a>
-
     <nav class="nav">
       <a href="#atelier">Ателье</a>
-      <a href="#process">Создание</a>
+      <a href="#create">Создание</a>
       <a href="#craft">Мастерство</a>
       <a href="#contact">Контакты</a>
     </nav>
-
-    <button class="menu-btn" id="menu-btn" aria-label="Меню">
-      <span></span>
-      <span></span>
+    <button class="burger" id="burger">
+      <span></span><span></span>
     </button>
   </header>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-nav" id="mobile-nav">
-    <div class="mobile-nav-inner">
-      <a href="#atelier" class="mobile-link">Ателье</a>
-      <a href="#process" class="mobile-link">Создание</a>
-      <a href="#craft" class="mobile-link">Мастерство</a>
-      <a href="#contact" class="mobile-link">Контакты</a>
-    </div>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#atelier" class="mobile-link">Ателье</a>
+    <a href="#create" class="mobile-link">Создание</a>
+    <a href="#craft" class="mobile-link">Мастерство</a>
+    <a href="#contact" class="mobile-link">Контакты</a>
   </div>
 
   <!-- Hero -->
   <section class="hero">
     <div class="hero-bg" style="background-image: url('IMG_8908.jpeg')"></div>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Механические часы · Сургут</p>
-      <h1 class="hero-title">Тихий ход</h1>
-      <div class="hero-clock">
-        <span id="clock">00:00</span>
-        <span class="clock-caption">мягкое время</span>
+      <p class="eyebrow reveal">Механические часы · Сургут</p>
+      <h1 class="title reveal">Тихий<br>ход</h1>
+      <div class="clock reveal">
+        <div class="time" id="clock">00:00</div>
+        <div class="caption">мягкое время</div>
       </div>
     </div>
   </section>
@@ -73,28 +70,28 @@
   <!-- Atelier -->
   <section class="section" id="atelier">
     <div class="container">
-      <div class="split">
-        <div class="split-text">
-          <span class="index">01</span>
+      <div class="grid">
+        <div class="text reveal">
+          <span class="num">01</span>
           <h2>Ателье</h2>
           <p>Мы создаём механические часы вручную. Каждая деталь проходит через руки мастера. Никакой спешки — только точность и тишина.</p>
         </div>
-        <div class="split-media">
+        <div class="media reveal">
           <img src="IMG_8910.jpeg" alt="Ателье">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Process -->
-  <section class="section section-alt" id="process">
+  <!-- Create -->
+  <section class="section dark" id="create">
     <div class="container">
-      <div class="split reverse">
-        <div class="split-media">
+      <div class="grid reverse">
+        <div class="media reveal">
           <img src="IMG_8912.jpeg" alt="Создание">
         </div>
-        <div class="split-text">
-          <span class="index">02</span>
+        <div class="text reveal">
+          <span class="num">02</span>
           <h2>Создание</h2>
           <p>Каждый механизм собирается с нуля. Мы не копируем — мы слушаем, как должен тикать именно этот экземпляр.</p>
         </div>
@@ -105,13 +102,13 @@
   <!-- Craft -->
   <section class="section" id="craft">
     <div class="container">
-      <div class="split">
-        <div class="split-text">
-          <span class="index">03</span>
+      <div class="grid">
+        <div class="text reveal">
+          <span class="num">03</span>
           <h2>Мастерство</h2>
           <p>Точность, терпение и внимание к каждой детали. Здесь нет места спешке.</p>
         </div>
-        <div class="split-media">
+        <div class="media reveal">
           <img src="IMG_8911.jpeg" alt="Мастерство">
         </div>
       </div>
@@ -119,24 +116,19 @@
   </section>
 
   <!-- Contact -->
-  <section class="section contact" id="contact">
+  <section class="section dark contact" id="contact">
     <div class="container">
-      <div class="contact-inner">
+      <div class="contact-box reveal">
         <img src="IMG_8735.png" alt="AK" class="contact-logo">
         <h2>Контакты</h2>
-        <p class="contact-city">Сургут</p>
-        <p class="contact-note">Это выдуманный сайт.<br>Все совпадения случайны.</p>
-        <a href="https://vk.ru/id_aikharisov" target="_blank" class="contact-btn">Написать в ВК</a>
+        <p class="city">Сургут</p>
+        <p class="note">Это выдуманный сайт.<br>Все совпадения случайны.</p>
+        <a href="https://vk.ru/id_aikharisov" target="_blank" class="btn">Написать в ВК</a>
       </div>
     </div>
   </section>
 
-  <!-- Back to top -->
-  <button class="to-top" id="to-top" aria-label="Наверх">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M12 19V5M5 12l7-7 7 7"/>
-    </svg>
-  </button>
+  <button class="to-top" id="to-top">↑</button>
 
   <script src="script.js"></script>
 </body>
