@@ -5,130 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Тихий ход — Ателье | Сургут</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- Preloader -->
   <div id="preloader">
-    <div class="preloader-content">
-      <img src="IMG_8735.png" alt="AK" class="preloader-logo">
-      <div class="preloader-bar"></div>
+    <div class="loader">
+      <img src="IMG_8735.png" alt="AK" class="loader-logo">
+      <div class="loader-line"></div>
     </div>
   </div>
 
   <!-- Popup -->
   <div id="popup" class="popup">
-    <div class="popup-card">
+    <div class="popup-inner">
       <p>Это выдуманный сайт.<br>Все совпадения случайны.</p>
       <h3>Хотите заказать сайт?</h3>
       <a href="https://vk.ru/id_aikharisov" target="_blank" class="btn">Написать в ВК</a>
-      <button id="popup-close">Закрыть</button>
+      <button id="close-popup">Закрыть</button>
     </div>
   </div>
 
   <!-- Header -->
   <header class="header">
-    <a href="#" class="logo">
-      <img src="IMG_8735.png" alt="AK">
-    </a>
+    <a href="#" class="logo"><img src="IMG_8735.png" alt="AK"></a>
     <nav class="nav">
       <a href="#atelier">Ателье</a>
       <a href="#create">Создание</a>
       <a href="#craft">Мастерство</a>
       <a href="#contact">Контакты</a>
     </nav>
-    <button class="burger" id="burger">
-      <span></span><span></span>
-    </button>
+    <button class="burger" id="burger"><span></span><span></span></button>
   </header>
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#atelier" class="mobile-link">Ателье</a>
-    <a href="#create" class="mobile-link">Создание</a>
-    <a href="#craft" class="mobile-link">Мастерство</a>
-    <a href="#contact" class="mobile-link">Контакты</a>
+    <a href="#atelier">Ателье</a>
+    <a href="#create">Создание</a>
+    <a href="#craft">Мастерство</a>
+    <a href="#contact">Контакты</a>
   </div>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-bg" style="background-image: url('IMG_8908.jpeg')"></div>
-    <div class="hero-overlay"></div>
+    <div class="hero-image" style="background-image: url('IMG_8908.jpeg')"></div>
     <div class="hero-content">
-      <p class="eyebrow reveal">Механические часы · Сургут</p>
-      <h1 class="title reveal">Тихий<br>ход</h1>
-      <div class="clock reveal">
-        <div class="time" id="clock">00:00</div>
-        <div class="caption">мягкое время</div>
+      <div class="hero-left">
+        <p class="label anim">Механические часы</p>
+        <h1 class="anim">Тихий<br>ход</h1>
+        <p class="city anim">Сургут</p>
+      </div>
+      <div class="hero-right anim">
+        <div class="clock">
+          <div id="time">00:00</div>
+          <span>мягкое время</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Atelier -->
-  <section class="section" id="atelier">
-    <div class="container">
-      <div class="grid">
-        <div class="text reveal">
-          <span class="num">01</span>
-          <h2>Ателье</h2>
-          <p>Мы создаём механические часы вручную. Каждая деталь проходит через руки мастера. Никакой спешки — только точность и тишина.</p>
-        </div>
-        <div class="media reveal">
-          <img src="IMG_8910.jpeg" alt="Ателье">
-        </div>
-      </div>
+  <section class="block" id="atelier">
+    <div class="block-image">
+      <img src="IMG_8910.jpeg" alt="Ателье" class="anim-img">
+    </div>
+    <div class="block-text anim">
+      <span>01</span>
+      <h2>Ателье</h2>
+      <p>Мы создаём механические часы вручную. Каждая деталь проходит через руки мастера. Никакой спешки — только точность и тишина.</p>
     </div>
   </section>
 
   <!-- Create -->
-  <section class="section dark" id="create">
-    <div class="container">
-      <div class="grid reverse">
-        <div class="media reveal">
-          <img src="IMG_8912.jpeg" alt="Создание">
-        </div>
-        <div class="text reveal">
-          <span class="num">02</span>
-          <h2>Создание</h2>
-          <p>Каждый механизм собирается с нуля. Мы не копируем — мы слушаем, как должен тикать именно этот экземпляр.</p>
-        </div>
-      </div>
+  <section class="block reverse" id="create">
+    <div class="block-image">
+      <img src="IMG_8912.jpeg" alt="Создание" class="anim-img">
+    </div>
+    <div class="block-text anim">
+      <span>02</span>
+      <h2>Создание</h2>
+      <p>Каждый механизм собирается с нуля. Мы не копируем — мы слушаем, как должен тикать именно этот экземпляр.</p>
     </div>
   </section>
 
   <!-- Craft -->
-  <section class="section" id="craft">
-    <div class="container">
-      <div class="grid">
-        <div class="text reveal">
-          <span class="num">03</span>
-          <h2>Мастерство</h2>
-          <p>Точность, терпение и внимание к каждой детали. Здесь нет места спешке.</p>
-        </div>
-        <div class="media reveal">
-          <img src="IMG_8911.jpeg" alt="Мастерство">
-        </div>
-      </div>
+  <section class="block" id="craft">
+    <div class="block-image">
+      <img src="IMG_8911.jpeg" alt="Мастерство" class="anim-img">
+    </div>
+    <div class="block-text anim">
+      <span>03</span>
+      <h2>Мастерство</h2>
+      <p>Точность, терпение и внимание к каждой детали. Здесь нет места спешке.</p>
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="section dark contact" id="contact">
-    <div class="container">
-      <div class="contact-box reveal">
-        <img src="IMG_8735.png" alt="AK" class="contact-logo">
-        <h2>Контакты</h2>
-        <p class="city">Сургут</p>
-        <p class="note">Это выдуманный сайт.<br>Все совпадения случайны.</p>
-        <a href="https://vk.ru/id_aikharisov" target="_blank" class="btn">Написать в ВК</a>
-      </div>
+  <section class="contact" id="contact">
+    <div class="contact-inner anim">
+      <img src="IMG_8735.png" alt="AK" class="contact-logo">
+      <h2>Контакты</h2>
+      <p class="city">Сургут</p>
+      <p class="note">Это выдуманный сайт.<br>Все совпадения случайны.</p>
+      <a href="https://vk.ru/id_aikharisov" target="_blank" class="btn">Написать в ВК</a>
     </div>
   </section>
 
-  <button class="to-top" id="to-top">↑</button>
+  <button id="to-top" class="to-top">↑</button>
 
   <script src="script.js"></script>
 </body>
