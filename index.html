@@ -5,93 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Тихий ход | Сургут</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- Прелоадер -->
   <div id="preloader">
-    <div class="preloader-box">
+    <div class="preloader-inner">
       <img src="IMG_8735.png" alt="AK" class="preloader-logo">
-      <div class="preloader-line"></div>
+      <div class="preloader-bar"></div>
     </div>
   </div>
 
   <!-- Попап -->
   <div id="popup" class="popup">
-    <div class="popup-content">
+    <div class="popup-box">
       <p>Сайт — полная фантазия AIKharisov.<br>Все совпадения случайны.</p>
-      <p class="popup-question">Хотите заказать сайт?</p>
+      <p class="popup-q">Хотите заказать сайт?</p>
       <a href="https://vk.ru/id_aikharisov" target="_blank" class="popup-btn">Написать в ВК</a>
       <button id="popup-close">Закрыть</button>
     </div>
   </div>
 
-  <!-- Меню -->
+  <!-- Навигация -->
   <header class="header">
-    <a href="#" class="logo">
-      <img src="IMG_8735.png" alt="AK">
-      <span>Тихий ход</span>
-    </a>
-    <nav class="nav">
-      <a href="#atelier">Ателье</a>
-      <a href="#create">Создание</a>
-      <a href="#craft">Мастерство</a>
-      <a href="#contact">Контакты</a>
-    </nav>
-    <button class="burger" id="burger">
-      <span></span><span></span>
-    </button>
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <img src="IMG_8735.png" alt="AK">
+        <span>Тихий ход</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#atelier" class="nav-link">Ателье</a>
+        <a href="#create" class="nav-link">Создание</a>
+        <a href="#craft" class="nav-link">Мастерство</a>
+        <a href="#contact" class="nav-link">Контакты</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </header>
 
   <!-- Мобильное меню -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#atelier">Ателье</a>
-    <a href="#create">Создание</a>
-    <a href="#craft">Мастерство</a>
-    <a href="#contact">Контакты</a>
+    <button class="mobile-close" id="mobile-close">✕</button>
+    <a href="#atelier" class="mobile-link">Ателье</a>
+    <a href="#create" class="mobile-link">Создание</a>
+    <a href="#craft" class="mobile-link">Мастерство</a>
+    <a href="#contact" class="mobile-link">Контакты</a>
   </div>
 
   <!-- Hero -->
   <section class="hero">
     <div class="hero-bg" style="background-image: url('IMG_8908.jpeg')"></div>
-    <div class="hero-overlay"></div>
+    <div class="hero-dim"></div>
     <div class="hero-content">
-      <p class="label">Ателье механических часов</p>
-      <h1>Тихий ход</h1>
-      <p class="city">Сургут</p>
-      <div class="clock">
+      <p class="hero-label anim">Ателье механических часов</p>
+      <h1 class="anim">Тихий ход</h1>
+      <p class="hero-city anim">Сургут</p>
+      <div class="clock anim">
         <div id="clock">00:00</div>
         <span>мягкое время</span>
       </div>
     </div>
   </section>
 
-  <!-- Блоки с текстом НА фото -->
-  <section class="shot" id="atelier">
-    <div class="shot-bg" style="background-image: url('IMG_8910.jpeg')"></div>
-    <div class="shot-overlay"></div>
-    <div class="shot-content">
+  <!-- Секции с текстом на фото -->
+  <section class="panel" id="atelier">
+    <div class="panel-bg" style="background-image: url('IMG_8910.jpeg')"></div>
+    <div class="panel-fade"></div>
+    <div class="panel-text anim">
       <span>01</span>
       <h2>Ателье</h2>
       <p>Независимое пространство, где рождаются механические часы. Здесь нет конвейера. Есть руки мастера, тишина и внимание к каждой детали.</p>
     </div>
   </section>
 
-  <section class="shot" id="create">
-    <div class="shot-bg" style="background-image: url('IMG_8912.jpeg')"></div>
-    <div class="shot-overlay"></div>
-    <div class="shot-content right">
+  <section class="panel" id="create">
+    <div class="panel-bg" style="background-image: url('IMG_8912.jpeg')"></div>
+    <div class="panel-fade right"></div>
+    <div class="panel-text right anim">
       <span>02</span>
       <h2>Создание</h2>
       <p>Каждый механизм собирается с нуля. Мы не копируем — мы ищем собственный ход времени.</p>
     </div>
   </section>
 
-  <section class="shot" id="craft">
-    <div class="shot-bg" style="background-image: url('IMG_8911.jpeg')"></div>
-    <div class="shot-overlay"></div>
-    <div class="shot-content">
+  <section class="panel" id="craft">
+    <div class="panel-bg" style="background-image: url('IMG_8911.jpeg')"></div>
+    <div class="panel-fade"></div>
+    <div class="panel-text anim">
       <span>03</span>
       <h2>Мастерство</h2>
       <p>Точность до микрона. Терпение. Умение слышать, как должен звучать правильный механизм.</p>
@@ -100,12 +107,12 @@
 
   <!-- Контакты -->
   <section class="contact" id="contact">
-    <div class="contact-inner">
+    <div class="contact-box anim">
       <img src="IMG_8735.png" alt="AK" class="contact-logo">
       <h2>Контакты</h2>
-      <p class="city">Сургут</p>
-      <p class="note">Сайт — полная фантазия AIKharisov.<br>Все совпадения случайны.</p>
-      <a href="https://vk.ru/id_aikharisov" target="_blank" class="btn">Написать в ВК</a>
+      <p class="contact-city">Сургут</p>
+      <p class="contact-note">Сайт — полная фантазия AIKharisov.<br>Все совпадения случайны.</p>
+      <a href="https://vk.ru/id_aikharisov" target="_blank" class="contact-btn">Написать в ВК</a>
     </div>
   </section>
 
