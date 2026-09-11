@@ -49,7 +49,7 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
 // Кнопка наверх
 const toTop = document.getElementById('to-top');
 window.addEventListener('scroll', () => {
-  toTop.classList.toggle('show', window.scrollY > 600);
+  toTop.classList.toggle('show', window.scrollY > 700);
 });
 toTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
