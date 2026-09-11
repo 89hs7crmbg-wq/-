@@ -2,8 +2,8 @@
   --bg: #f4efe7;
   --text: #1a1815;
   --muted: #6a635a;
-  --accent: #9a7b4f;
-  --dark: #1a1815;
+  --accent: #c4a87a;
+  --dark: #12100e;
 }
 
 * {
@@ -27,7 +27,7 @@ body {
 #preloader {
   position: fixed;
   inset: 0;
-  background: #1a1815;
+  background: #12100e;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +67,7 @@ body {
   top: 0;
   width: 50%;
   height: 100%;
-  background: #9a7b4f;
+  background: #c4a87a;
   animation: load 1.3s ease-in-out infinite;
 }
 
@@ -85,7 +85,7 @@ body {
 .popup {
   position: fixed;
   inset: 0;
-  background: rgba(26,24,21,0.82);
+  background: rgba(18,16,14,0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,7 +116,7 @@ body {
 
 .popup-btn {
   display: inline-block;
-  background: #1a1815;
+  background: #12100e;
   color: #f4efe7;
   padding: 0.85rem 1.9rem;
   text-decoration: none;
@@ -132,7 +132,7 @@ body {
   font-size: 0.85rem;
 }
 
-/* Шапка — контрастная, хорошо видимая */
+/* Меню — тёмное и понятное */
 .header {
   position: fixed;
   top: 0;
@@ -143,7 +143,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2.5rem;
-  background: #1a1815;
+  background: rgba(18, 16, 14, 0.92);
+  backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -163,7 +164,6 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
   font-weight: 600;
-  color: #f4efe7;
 }
 
 .nav {
@@ -172,10 +172,11 @@ body {
 }
 
 .nav a {
-  color: rgba(244, 239, 231, 0.85);
+  color: rgba(244, 239, 231, 0.9);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
+  letter-spacing: 0.03em;
   transition: color 0.25s;
 }
 
@@ -204,7 +205,7 @@ body {
 .mobile-menu {
   position: fixed;
   inset: 0;
-  background: #1a1815;
+  background: #12100e;
   z-index: 95;
   display: flex;
   flex-direction: column;
@@ -232,12 +233,11 @@ body {
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 660px;
+  min-height: 680px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-top: 0;
 }
 
 .hero-bg {
@@ -245,27 +245,33 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.3;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(18,16,14,0.35), rgba(18,16,14,0.65));
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
+  color: #f4efe7;
   padding: 0 1.5rem;
 }
 
 .label {
   font-size: 0.8rem;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1.4rem;
+  opacity: 0.75;
+  margin-bottom: 1.5rem;
 }
 
 .hero-content h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(4rem, 11vw, 8.2rem);
+  font-size: clamp(4.2rem, 12vw, 8.5rem);
   font-weight: 600;
   line-height: 0.95;
   margin-bottom: 0.8rem;
@@ -273,90 +279,116 @@ body {
 
 .city {
   font-size: 1rem;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--muted);
+  opacity: 0.7;
   margin-bottom: 3rem;
 }
 
 .clock {
   display: inline-block;
-  padding: 1.15rem 1.9rem;
-  border: 1px solid rgba(26,24,21,0.12);
-  background: rgba(244,239,231,0.85);
+  padding: 1.2rem 2rem;
+  border: 1px solid rgba(244,239,231,0.25);
+  background: rgba(18,16,14,0.35);
+  backdrop-filter: blur(6px);
 }
 
 #clock {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.4rem;
-  color: var(--accent);
+  font-size: 2.5rem;
+  color: #c4a87a;
   letter-spacing: 0.08em;
 }
 
 .clock span {
   display: block;
   font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--muted);
+  opacity: 0.7;
   margin-top: 0.3rem;
 }
 
-/* Новые полноэкранные блоки */
-.full {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  min-height: 90vh;
+/* ===== Текст прямо на фото ===== */
+.shot {
+  position: relative;
+  height: 100vh;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
-.full.reverse {
-  grid-template-columns: 0.9fr 1.1fr;
-}
-
-.full.reverse .full-img {
-  order: 2;
-}
-
-.full-img {
+.shot-bg {
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
+  transition: transform 1.2s ease;
 }
 
-.full-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.shot:hover .shot-bg {
+  transform: scale(1.04);
+}
+
+.shot-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(18,16,14,0.72) 0%, rgba(18,16,14,0.25) 55%, transparent 100%);
+}
+
+.shot-content {
+  position: relative;
+  z-index: 2;
+  max-width: 480px;
+  padding: 0 4rem;
+  color: #f4efe7;
+}
+
+.shot-content.right {
+  margin-left: auto;
+  text-align: right;
+  background: linear-gradient(-90deg, rgba(18,16,14,0.72) 0%, rgba(18,16,14,0.25) 55%, transparent 100%);
   padding: 4rem;
-  background: var(--bg);
 }
 
-.full-text span {
+.shot-content.right + .shot-overlay,
+.shot:has(.right) .shot-overlay {
+  background: linear-gradient(-90deg, rgba(18,16,14,0.72) 0%, rgba(18,16,14,0.25) 55%, transparent 100%);
+}
+
+.shot-content span {
+  display: block;
   font-size: 0.75rem;
   letter-spacing: 0.2em;
-  color: var(--accent);
+  color: #c4a87a;
   margin-bottom: 1.2rem;
 }
 
-.full-text h2 {
+.shot-content h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 3.2rem;
+  font-size: clamp(2.8rem, 5vw, 4rem);
   font-weight: 600;
   margin-bottom: 1.4rem;
   line-height: 1.1;
 }
 
-.full-text p {
+.shot-content p {
   font-size: 1.1rem;
-  color: var(--muted);
-  max-width: 380px;
   line-height: 1.75;
+  opacity: 0.9;
+  max-width: 400px;
+}
+
+.shot-content.right p {
+  margin-left: auto;
 }
 
 /* Контакты */
 .contact {
   padding: 8rem 2rem;
   text-align: center;
-  background: #1a1815;
+  background: #12100e;
   color: #f4efe7;
 }
 
@@ -366,34 +398,34 @@ body {
 }
 
 .contact-logo {
-  width: 46px;
-  margin-bottom: 1.5rem;
+  width: 48px;
+  margin-bottom: 1.6rem;
   filter: invert(1) brightness(1.7);
 }
 
 .contact h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.8rem;
+  font-size: 2.9rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .contact .city {
-  color: rgba(244,239,231,0.6);
-  margin-bottom: 1.5rem;
+  opacity: 0.6;
+  margin-bottom: 1.6rem;
 }
 
 .note {
-  color: rgba(244,239,231,0.55);
-  margin-bottom: 2.2rem;
+  opacity: 0.55;
+  margin-bottom: 2.3rem;
   line-height: 1.6;
 }
 
 .btn {
   display: inline-block;
   background: #c4a87a;
-  color: #1a1815;
-  padding: 1rem 2.4rem;
+  color: #12100e;
+  padding: 1rem 2.5rem;
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
@@ -411,9 +443,9 @@ body {
   right: 1.7rem;
   width: 44px;
   height: 44px;
-  border: 1px solid rgba(26,24,21,0.15);
-  background: rgba(244,239,231,0.95);
-  color: var(--text);
+  border: 1px solid rgba(244,239,231,0.2);
+  background: rgba(18,16,14,0.85);
+  color: #c4a87a;
   font-size: 1.15rem;
   cursor: pointer;
   opacity: 0;
@@ -445,25 +477,29 @@ body {
     display: none;
   }
 
-  .full,
-  .full.reverse {
-    grid-template-columns: 1fr;
-    min-height: auto;
+  .shot {
+    height: 85vh;
+    min-height: 550px;
   }
 
-  .full.reverse .full-img {
-    order: 0;
+  .shot-content,
+  .shot-content.right {
+    padding: 2rem 1.5rem;
+    text-align: left;
+    margin: 0;
+    max-width: 100%;
   }
 
-  .full-img {
-    height: 55vh;
+  .shot-content.right p {
+    margin-left: 0;
   }
 
-  .full-text {
-    padding: 3rem 1.5rem;
+  .shot-overlay,
+  .shot:has(.right) .shot-overlay {
+    background: linear-gradient(to top, rgba(18,16,14,0.85) 0%, rgba(18,16,14,0.4) 50%, transparent 100%);
   }
 
   .hero-content h1 {
-    font-size: 3.6rem;
+    font-size: 3.8rem;
   }
 }
