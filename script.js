@@ -35,16 +35,33 @@ setInterval(updateClock, 1000);
 // Мобильное меню
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobile-menu');
+const mobileClose = document.getElementById('mobile-close');
 
 burger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
+  mobileMenu.classList.add('open');
 });
 
-document.querySelectorAll('.mobile-menu a').forEach(link => {
+mobileClose.addEventListener('click', () => {
+  mobileMenu.classList.remove('open');
+});
+
+document.querySelectorAll('.mobile-link').forEach(link => {
   link.addEventListener('click', () => {
     mobileMenu.classList.remove('open');
   });
 });
+
+// Анимации появления
+const anims = document.querySelectorAll('.anim');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, { threshold: 0.15 });
+
+anims.forEach(el => observer.observe(el));
 
 // Кнопка наверх
 const toTop = document.getElementById('to-top');
