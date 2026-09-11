@@ -3,32 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Тихий ход — Ателье | Сургут</title>
+  <title>Тихий ход | Сургут</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Кастомный прелоадер -->
+  <!-- Прелоадер -->
   <div id="preloader">
-    <div class="preloader-inner">
-      <div class="preloader-ring"></div>
+    <div class="preloader-box">
       <img src="IMG_8735.png" alt="AK" class="preloader-logo">
-      <p class="preloader-text">Тихий ход</p>
+      <div class="preloader-line"></div>
     </div>
   </div>
 
   <!-- Попап -->
   <div id="popup" class="popup">
-    <div class="popup-card">
-      <p class="popup-main">Сайт — полная фантазия AIKharisov.<br>Все совпадения случайны.</p>
-      <p class="popup-ask">Хотите заказать сайт?</p>
+    <div class="popup-content">
+      <p>Сайт — полная фантазия AIKharisov.<br>Все совпадения случайны.</p>
+      <p class="popup-question">Хотите заказать сайт?</p>
       <a href="https://vk.ru/id_aikharisov" target="_blank" class="popup-btn">Написать в ВК</a>
-      <button class="popup-close" id="popup-close">Закрыть</button>
+      <button id="popup-close">Закрыть</button>
     </div>
   </div>
 
-  <!-- Меню (сразу понятное) -->
+  <!-- Шапка -->
   <header class="header">
     <a href="#" class="logo">
       <img src="IMG_8735.png" alt="AK">
@@ -40,7 +39,7 @@
       <a href="#craft">Мастерство</a>
       <a href="#contact">Контакты</a>
     </nav>
-    <button class="burger" id="burger" aria-label="Меню">
+    <button class="burger" id="burger">
       <span></span><span></span>
     </button>
   </header>
@@ -57,10 +56,10 @@
   <section class="hero">
     <div class="hero-bg" style="background-image: url('IMG_8908.jpeg')"></div>
     <div class="hero-content">
-      <p class="hero-label">Ателье механических часов</p>
+      <p class="label">Ателье механических часов</p>
       <h1>Тихий ход</h1>
-      <p class="hero-city">Сургут</p>
-      <div class="hero-clock">
+      <p class="city">Сургут</p>
+      <div class="clock">
         <div id="clock">00:00</div>
         <span>мягкое время</span>
       </div>
@@ -70,13 +69,13 @@
   <!-- Ателье -->
   <section class="section" id="atelier">
     <div class="container">
-      <div class="row">
-        <div class="col text">
+      <div class="grid">
+        <div class="text">
           <span class="num">01</span>
           <h2>Ателье</h2>
           <p>Независимое пространство, где рождаются механические часы. Здесь нет конвейера. Есть руки мастера, тишина и внимание к каждой детали.</p>
         </div>
-        <div class="col media">
+        <div class="image">
           <img src="IMG_8910.jpeg" alt="Ателье">
         </div>
       </div>
@@ -84,16 +83,16 @@
   </section>
 
   <!-- Создание -->
-  <section class="section soft" id="create">
+  <section class="section alt" id="create">
     <div class="container">
-      <div class="row reverse">
-        <div class="col media">
+      <div class="grid reverse">
+        <div class="image">
           <img src="IMG_8912.jpeg" alt="Создание">
         </div>
-        <div class="col text">
+        <div class="text">
           <span class="num">02</span>
           <h2>Создание</h2>
-          <p>Каждый механизм собирается с нуля. Мы не копируем чужие решения — мы ищем собственный ход времени.</p>
+          <p>Каждый механизм собирается с нуля. Мы не копируем — мы ищем собственный ход времени.</p>
         </div>
       </div>
     </div>
@@ -102,13 +101,13 @@
   <!-- Мастерство -->
   <section class="section" id="craft">
     <div class="container">
-      <div class="row">
-        <div class="col text">
+      <div class="grid">
+        <div class="text">
           <span class="num">03</span>
           <h2>Мастерство</h2>
           <p>Точность до микрона. Терпение. Умение слышать, как должен звучать правильный механизм.</p>
         </div>
-        <div class="col media">
+        <div class="image">
           <img src="IMG_8911.jpeg" alt="Мастерство">
         </div>
       </div>
@@ -118,7 +117,7 @@
   <!-- Контакты -->
   <section class="section contact" id="contact">
     <div class="container">
-      <div class="contact-box">
+      <div class="contact-inner">
         <img src="IMG_8735.png" alt="AK" class="contact-logo">
         <h2>Контакты</h2>
         <p class="city">Сургут</p>
