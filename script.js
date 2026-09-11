@@ -46,21 +46,6 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
   });
 });
 
-// Анимация появления при скролле
-const reveals = document.querySelectorAll('.reveal');
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
-    }
-  });
-}, {
-  threshold: 0.15
-});
-
-reveals.forEach(el => observer.observe(el));
-
 // Кнопка наверх
 const toTop = document.getElementById('to-top');
 window.addEventListener('scroll', () => {
